@@ -1,0 +1,11 @@
+#set run to 0 if running files in test mode (on blackbuck or wasp data), 1 if on new data
+run: 0
+annotation_size: 20
+root_dir: /media/aakanksha/f41d5ac2-703c-4b56-a960-cd3a54f21cfb/aakanksha/Phd/Analysis/Chapter1/MOTHe-master
+
+#Color thresholds for localising potential areas having animals
+#Example, for blackbuck videos thresholds are 0-150, for wasp videos 150-250
+#Read help section "Color threshold parametrization" to set these values for other videos
+
+Tmin: 0 # change it to 150 for wasp videos
+Tmax: 150 # Change it to 250 for wasp videos
