@@ -1,12 +1,12 @@
 # MOTHe
 
-Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses *Convolutional Neural Network(CNN)* architecture for the object detection task.  It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empoweres the user to track objects of interest even in a natural setting. 
+Mothe is a pipeline developed to detect and track multiple animals in a heterogeneous environment. MOTHe is a python based repository and it uses *Convolutional Neural Network(CNN)* architecture for the object detection task.  It takes a digital image as an input and reads its features to assign a category. These algorithms are learning algorithms which means that they extract features from the images by using huge amounts of labeled training data. Once the CNN models are trained, these models can be used to classify novel data (images). MOTHe is designed to be generic which empowers the user to track objects of interest even in a natural setting. 
 
 __MOTHe has been developed and tested on Ubuntu 16.04 using python 3.5.2__
 
 ## PIPELINE DESCRIPTION:
 
-MOTHe can automate all the tasks associated with object classification and is divided into 5 excecutables dedicated to the following tasks.
+MOTHe can automate all the tasks associated with object classification and is divided into 5 executables dedicated to the following tasks.
 
 1. __System configuration__: The system configuration is used to setup MOTHe on the users system. Basic details such as the path to the local repository, path to the video to be processed, the size of the individial to be cropped and the size of the bounding box to be drawn during the detection phase.
 
@@ -249,6 +249,24 @@ Run command -
  <br>
 <img height="350" src="https://github.com/aakanksharathore/MOTHe/blob/master/help_screenshots/tracking1.png">
 <br>
+
+## HOW MUCH TRAINING DATA DO I NEED?
+
+MOTHe uses a CNN which uses a set of labelled examples to learn the features of the objects. Neural Networks generally work well with huge number of training samples. We recommend using at least 8-10k image examples for the animal category. This number may need to be increased if the animal of interest shows a lot of variation in morphology. For example, if males and females are of different colors, it is important to include sufficient examples for both of them. Similarly, if the background is too heterogeneous then you may need more training data (around 1500-2000 samples for different types of variations in the background).
+For example to train the MOTHe on our blackbuck videos, we used 9800 cropped samples for blackbuck (including males and females) and 19000 samples for the background because background included grass, soil, rocks, bushes, water etc.
+
+
+## CHOOSING COLOR THRESHOLDS
+
+The object detection steps requires user to enter threshold values in the config files. Object detection in MOTHe works in two steps, it first uses a color filter to identify the regions in the image on which to run the classification. We use color threshold to select these regions. You can see the values of thresholds for blackbuck and wasp videos in the *config.yml* file.
+If you are running MOTHe on a new dataset, there are two ways to select appropriate threshold values:
+
+1. You may open some frames from different videos in an interactive viewer (for example MATLAB image display), you can then click on the pixels on animal and check the RGB values (take the avergae of all 3 channels). Looking at these values in multiple instances will give you an idea to choose a starting minimum and maximum threshold. 
+Run the detection with these thresholds and you can improve the detection by hit and trial method to tweak the threshold.
+
+2. You can compare your videos to wasp and blackbuck videos and start with threshold values to which your data is more similar. For example, if your animal looks more similar to blackbuck in color and lighting conditions, you may start with default thresholds and improve the detection by changing lower and upper threshold by little amount at a time.
+
+
 
 =======
 Software to detect and track animals in their natural environment
