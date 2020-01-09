@@ -216,7 +216,7 @@ This code will also prompt for number of frames to skip. This will depend on the
 We recommend to not exceed this step size above 6 if user needs to track the individuals. For count data, this number can be as high as number of frames in the video.
 
 <br>
-<img height="350" src="https://github.com/Ananthsharma/MOTHe/blob/master/help_screenshots/detection2.png">
+<img height="350" src="https://github.com/aakanksharathore/MOTHe/blob/master/help_screenshots/detection2.png">
 <br>
 
 The status and number of frames processed will be shown on the screen-
