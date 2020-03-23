@@ -15,7 +15,7 @@ with open("config.yml", "r") as stream:
 root_dir = config_data["root_dir"]
 grabsize = int(config_data["annotation_size"])
 runtype=int(config_data["run"])
-
+path = config_data["root_dir"]
 #Open video fileimport Tkinter
 from tkinter.filedialog import askopenfilename
 #Open the video file which needs to be processed
