@@ -101,7 +101,7 @@ After creating the the virtual environment, activate the virtual environment as 
 
 After activating the mothe environment, configure all python modules using the *requirement.txt* as follows:
 
-`$ puthon3 -m pip install -r requirement.txt`
+`$ python3 -m pip install -r requirement.txt`
           
 <br>
 <img height="350" src="https://github.com/aakanksharathore/MOTHe/blob/master/help_screenshots/reqpip.png">
